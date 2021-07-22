@@ -12,7 +12,7 @@
   @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
   public struct PublishersProxy<Base> {
     public let base: Base
-    
+
     public init(_ base: Base) {
       self.base = base
     }

@@ -18,7 +18,7 @@ let package = Package(
       name: "CombineRuntime",
       type: .static,
       targets: ["CombineRuntime"]
-    )
+    ),
   ],
   dependencies: [
     .package(
@@ -35,7 +35,7 @@ let package = Package(
         .product(
           name: "CombineSchedulers",
           package: "combine-schedulers"
-        )
+        ),
       ]
     ),
     .target(
@@ -45,9 +45,9 @@ let package = Package(
       ]
     ),
     .target(name: "CombineRuntime"),
-    
+
     // ––––––––––––––––––––––– Tests –––––––––––––––––––––––
-    
+
     .testTarget(
       name: "CombineExtensionsTests",
       dependencies: [
@@ -59,6 +59,6 @@ let package = Package(
       dependencies: [
         .target(name: "CombineInterception")
       ]
-    )
+    ),
   ]
 )
