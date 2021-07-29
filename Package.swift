@@ -23,7 +23,7 @@ let package = Package(
   dependencies: [
     .package(
       url: "https://github.com/pointfreeco/combine-schedulers.git",
-      .branch("main")
+      from: "0.5.1"
     )
   ],
   targets: [
