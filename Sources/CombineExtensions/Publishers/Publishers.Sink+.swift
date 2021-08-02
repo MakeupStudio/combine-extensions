@@ -41,7 +41,7 @@
   @available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
   extension Publisher where Failure == Never {
     @inlinable
-    public func sinkValue(_ valueReceiver: @escaping (Output) -> Void) -> AnyCancellable {
+    public func sinkValues(_ valueReceiver: @escaping (Output) -> Void) -> AnyCancellable {
       return sink(receiveValue: valueReceiver)
     }
   }
