@@ -17,6 +17,16 @@
     func setDelegate(to object: Object)
   }
 
+  public func delegateProxy(
+    for object: Any
+  ) -> DelegateProxy? {
+    objc_getAssociatedObject(object, &associatedKey) as? DelegateProxy
+  }
+
+  extension NSObject {
+    public var delegateProxy: DelegateProxy? { CombineExtensions.delegateProxy(for: self) }
+  }
+
   @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
   extension DelegateProxyType where Self: DelegateProxy {
     public static func createDelegateProxy(for object: Object) -> Self {
@@ -25,7 +35,7 @@
 
       let delegateProxy: Self
 
-      if let associatedObject = objc_getAssociatedObject(object, &associatedKey) as? Self {
+      if let associatedObject = CombineExtensions.delegateProxy(for: object) as? Self {
         delegateProxy = associatedObject
       } else {
         delegateProxy = Self.init()
