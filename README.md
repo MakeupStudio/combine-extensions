@@ -1,3 +1,3 @@
 # combine-extensions
 
-A description of this package.
+Moved to [`https://github.com/capturecontext/combine-extensions`](https://github.com/capturecontext/combine-extensions)
